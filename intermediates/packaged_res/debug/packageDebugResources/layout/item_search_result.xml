@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/teal_100">
+
+            <ImageView
+                android:id="@+id/iconImageView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/unimatelogo"
+                app:tint="#0D9488" />
+            <!-- Ensure you have an appropriate drawable -->
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/subtitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:textColor="@color/gray_500"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

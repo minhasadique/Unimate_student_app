@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etAuthorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Author Name" />
+
+    <EditText
+        android:id="@+id/etPostContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Post Content"
+        android:inputType="textMultiLine" />
+
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btnSelectImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Image (Optional)" />
+
+    <Button
+        android:id="@+id/btnAddPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Post" />
+
+</LinearLayout>

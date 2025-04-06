@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:elevation="4dp"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:layout_margin="4dp">
+
+    <!-- Post Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Profile Image (Static) -->
+        <ImageView
+            android:id="@+id/profileImage5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/profilelogo"
+            android:contentDescription="Profile Image"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Name & Institution -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author Name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"/>
+
+            <TextView
+                android:id="@+id/postTime5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time ago"
+                android:textSize="12sp"
+                android:textColor="#777777"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Post Content -->
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post content here..."
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Post Image (Optional) -->
+    <ImageView
+        android:id="@+id/postImage5"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"/>
+
+    <!-- Like & Comment Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/likeIcon5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/likesicon"
+            android:contentDescription="Like Icon"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/likeCount5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="125 Likes"
+            android:textSize="14sp"
+            android:textColor="#777777" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/commentIcon5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/commenticon"
+            android:contentDescription="Comment Icon"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/commentCount5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45 Comments"
+            android:textSize="14sp"
+            android:textColor="#777777" />
+    </LinearLayout>
+</LinearLayout>

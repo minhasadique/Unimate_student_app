@@ -1,0 +1,178 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:padding="8dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/unimatelogo"
+            android:contentDescription="Logo" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="STARTUP HUB"
+            android:textColor="#4282aa"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Add Icon -->
+        <ImageView
+            android:id="@+id/addIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/addicon"
+            android:contentDescription="Add Icon"
+            android:backgroundTint="@color/teal_200"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+
+    <!-- RecyclerView for Startup Posts -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/startupRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="56dp"
+        android:padding="8dp"/>
+
+
+
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:layout_above="@id/footerLayout"-->
+<!--        app:cardCornerRadius="12dp"-->
+<!--        app:cardElevation="6dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="16dp"-->
+<!--            android:orientation="vertical"-->
+<!--            tools:ignore="ExtraText">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/startupTitle1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Unimate App"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/startupDescription1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="This app is a comprehensive digital platform designed to support students throughout their academic journey by providing a centralized hub for personalized resources and services. Key features include a student profile, personalized scholarship notifications, course-specific news and updates, a robust peer networking system, and a Startup Collaboration Hub. This hub connects students with innovative ideas to peers with complementary skills, fostering teamwork and entrepreneurial success."-->
+<!--                android:textSize="14sp"-->
+<!--                android:paddingTop="4dp"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/startupAuthor1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="By: Minha Sadique"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textColor="@android:color/darker_gray"-->
+<!--                android:paddingTop="6dp"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/startupRoles1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Roles Needed: Web Developer, Digital Marketer"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:paddingTop="4dp"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/startupContact1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Contact Info: 8089373798"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textColor="@android:color/holo_blue_dark"-->
+<!--                android:paddingTop="4dp"/>-->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:layout_alignParentBottom="true">
+
+        <!-- Home -->
+        <ImageView
+            android:id="@+id/homeIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/homelogo"
+            android:contentDescription="Home Icon"
+            android:layout_weight="1" />
+
+        <!-- Profile -->
+        <ImageView
+            android:id="@+id/profileIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/profilelogo"
+            android:contentDescription="Profile Icon"
+            android:layout_weight="1" />
+
+        <!-- Notifications -->
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/startuplogo"
+            android:contentDescription="Notifications Icon"
+            android:layout_weight="1" />
+
+        <!-- Search -->
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/searchlogo"
+            android:contentDescription="Search Icon"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,122 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:padding="8dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/unimatelogo"
+            android:contentDescription="Logo"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UNIMATE Chat"
+            android:textColor="#4282aa"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Back Icon -->
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/backicon"
+            android:contentDescription="Back"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:fillViewport="true"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Group Chats Section -->
+            <TextView
+                android:id="@+id/textGroupChats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Group Chats"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerGroups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"/>
+
+            <!-- Private Chats Section -->
+            <TextView
+                android:id="@+id/textPrivateChats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Private Chats"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingTop="20dp"
+                android:paddingBottom="5dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerUsers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="1200dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_create_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/addiconn"
+        android:contentDescription="Create New Group"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/design_default_color_secondary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>
+

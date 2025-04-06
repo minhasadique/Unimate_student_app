@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/unimatelogo"
+            android:contentDescription="Logo"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4282aa"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/chatIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/chatlogo"
+            android:contentDescription="Chat Icon"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Search Content -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/footerLayout">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="12dp"
+                        android:src="@drawable/searchlogoo"/>
+<!--                        android:tint="#1264ab"/>-->
+
+                    <EditText
+                        android:id="@+id/searchEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@null"
+                        android:hint="Search students, courses, scholarships..."
+                        android:textSize="16sp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"
+                android:clipToPadding="false">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        app:chipIcon="@drawable/searchlogoo"
+                        android:checked="true"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipStudents"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Students"
+                        app:chipIcon="@drawable/profilelogo"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCourses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Courses"
+                        app:chipIcon="@drawable/startuplogo"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipScholarships"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scholarships"
+                        app:chipIcon="@drawable/profilelogo"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipStartups"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Startups"
+                        app:chipIcon="@drawable/startuplogo"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                    <!-- Add other chips here -->
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchResultsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- Footer -->
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/homeIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/homelogo"
+                android:contentDescription="Home Icon"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/settingsIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/searchlogo"
+                android:contentDescription="Settings Icon"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/notificationIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/startuplogo"
+                android:contentDescription="Notifications Icon"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/profileIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/profilelogo"
+                android:contentDescription="Profile Icon"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

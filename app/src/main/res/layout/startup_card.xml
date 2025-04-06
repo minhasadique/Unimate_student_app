@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/startupTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Startup Title"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/startupDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Startup Description"
+            android:textSize="14sp"
+            android:paddingTop="4dp"/>
+
+        <TextView
+            android:id="@+id/startupAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By: Author Name"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:paddingTop="6dp"/>
+
+        <TextView
+            android:id="@+id/startupRoles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roles Needed: Developer, Designer"
+            android:textSize="14sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:paddingTop="4dp"/>
+        <TextView
+            android:id="@+id/startupContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Info: Ph.no/Email"
+            android:textSize="14sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:paddingTop="4dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

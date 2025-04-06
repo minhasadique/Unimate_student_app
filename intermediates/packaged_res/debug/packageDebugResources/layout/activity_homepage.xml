@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:background="#F5F5F5">
+
+<!-- Header -->
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+        android:padding="8dp">
+
+        <!-- Logo on the Left -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/unimatelogo"
+            android:contentDescription="Logo"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Spacer to push chat icon to the right -->
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4282aa"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Chat Icon on the Right -->
+        <ImageView
+            android:id="@+id/chatIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/chatlogo"
+            android:contentDescription="Chat Icon"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+<!-- Scrollable Announcements Section -->
+    <ScrollView
+        android:id="@+id/scrollableSection"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/headerLayout"
+        android:layout_above="@id/footerLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Post 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:elevation="4dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_margin="4dp">
+
+                <!-- Post Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image -->
+                    <ImageView
+                        android:id="@+id/profileImage1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profilelogo"
+                        android:contentDescription="Profile Image"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/unimatelogo" />
+
+                    <!-- Name & Institution -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/postAuthor1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ABC University"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333" />
+
+                        <TextView
+                            android:id="@+id/postTime1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 hours ago"
+                            android:textSize="12sp"
+                            android:textColor="#777777" />
+                    </LinearLayout>
+                </LinearLayout>
+
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/progressBar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:visibility="gone"-->
+<!--                    android:layout_gravity="center"/>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"/>
+
+                <!-- Post Content -->
+                <TextView
+                    android:id="@+id/postText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join our AI Data Science Seminar on March 10th! Don't miss out on this opportunity."
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Post Image -->
+                <ImageView
+                    android:id="@+id/postImage1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@drawable/post1"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Like & Comment Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/likeIcon1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/likesicon"
+                        android:contentDescription="Like Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/likeCount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="125 Likes"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/commentIcon1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/commenticon"
+                        android:contentDescription="Comment Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/commentCount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 Comments"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Post 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:elevation="4dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_margin="4dp">
+
+                <!-- Post Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image -->
+                    <ImageView
+                        android:id="@+id/profileImage2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profilelogo"
+                        android:contentDescription="Profile Image"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/unimatelogo" />
+
+                    <!-- Name & Institution -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/postAuthor2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ABC University"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333" />
+
+                        <TextView
+                            android:id="@+id/postTime2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 hours ago"
+                            android:textSize="12sp"
+                            android:textColor="#777777" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Post Content -->
+                <TextView
+                    android:id="@+id/postText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join our AI Data Science Seminar on March 10th! Don't miss out on this opportunity."
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Post Image -->
+                <ImageView
+                    android:id="@+id/postImage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@drawable/post2"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Like & Comment Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/likeIcon2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/likesicon"
+                        android:contentDescription="Like Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/likeCount2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="125 Likes"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/commentIcon2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/commenticon"
+                        android:contentDescription="Comment Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/commentCount2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 Comments"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Post 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:elevation="4dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_margin="4dp">
+
+                <!-- Post Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image -->
+                    <ImageView
+                        android:id="@+id/profileImage4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profilelogo"
+                        android:contentDescription="Profile Image"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/unimatelogo" />
+
+                    <!-- Name & Institution -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/postAuthor4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ABC University"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333" />
+
+                        <TextView
+                            android:id="@+id/postTime4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 hours ago"
+                            android:textSize="12sp"
+                            android:textColor="#777777" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Post Content -->
+                <TextView
+                    android:id="@+id/postText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join our AI Data Science Seminar on March 10th! Don't miss out on this opportunity."
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Post Image -->
+<!--                <ImageView-->
+<!--                    android:id="@+id/postImage4"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:src="@drawable/unimatelogo"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:layout_marginTop="8dp" />-->
+
+                <!-- Like & Comment Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/likeIcon4"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/likesicon"
+                        android:contentDescription="Like Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/likeCount4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="125 Likes"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/commentIcon4"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/commenticon"
+                        android:contentDescription="Comment Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/commentCount4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 Comments"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Post 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:elevation="4dp"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_margin="4dp">
+
+                <!-- Post Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- Profile Image -->
+                    <ImageView
+                        android:id="@+id/profileImage3"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profilelogo"
+                        android:contentDescription="Profile Image"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/unimatelogo" />
+
+                    <!-- Name & Institution -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/postAuthor3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ABC University"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#333333" />
+
+                        <TextView
+                            android:id="@+id/postTime3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 hours ago"
+                            android:textSize="12sp"
+                            android:textColor="#777777" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Post Content -->
+                <TextView
+                    android:id="@+id/postText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join our AI Data Science Seminar on March 10th! Don't miss out on this opportunity."
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Post Image -->
+                <ImageView
+                    android:id="@+id/postImage3"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@drawable/post3"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Like & Comment Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:id="@+id/likeIcon3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/likesicon"
+                        android:contentDescription="Like Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/likeCount3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="125 Likes"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+
+                    <View
+                        android:layout_width="16dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/commentIcon3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/commenticon"
+                        android:contentDescription="Comment Icon"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:id="@+id/commentCount3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 Comments"
+                        android:textSize="14sp"
+                        android:textColor="#777777" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
+
+<!-- Footer -->
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:layout_alignParentBottom="true">
+
+        <!-- Home Icon -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/homeIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/homelogo"
+                android:contentDescription="Home Icon" />
+        </LinearLayout>
+
+        <!-- Profile Icon -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/searchlogo"
+                android:contentDescription="Profile Icon" />
+        </LinearLayout>
+
+        <!-- Profile Icon -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/postaddIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/addicon"
+                android:contentDescription="Add Icon" />
+        </LinearLayout>
+
+        <!-- Notifications Icon -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/notificationIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/startuplogo"
+                android:contentDescription="Notifications Icon" />
+        </LinearLayout>
+
+        <!-- Settings Icon -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/profileIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/profilelogo"
+                android:contentDescription="Settings Icon" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
